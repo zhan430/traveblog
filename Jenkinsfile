@@ -5,5 +5,4 @@ pipeline {
         docker.build "zhan430/traveblog"
       }
     }
-  }
 }
