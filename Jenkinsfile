@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Pull GitHub') {
       steps {
-        sh 'cd /home/ubuntu/traveblog'
+        sh 'cd /home/ubuntu/traveblog
+	    git pull'
       }
     }
   }
