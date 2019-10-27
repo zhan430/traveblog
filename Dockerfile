@@ -2,11 +2,11 @@ FROM python:3.7.3-stretch
 
 ## Step 1:
 # Create a working directory
-WORKDIR /app
+WORKDIR /home
 
 ## Step 2:
 # Copy source code to working directory
-COPY . /app
+COPY . /home
 #COPY ./requirements.txt /app
 
 ## Step 3:
