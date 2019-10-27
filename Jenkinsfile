@@ -3,8 +3,13 @@ pipeline {
   stages {
     stage('Pull GitHub') {
       steps {
-        sh 'cd /home/ubuntu/traveblog
-	    git pull'
+        sh 'make git'
+      }
+    }
+
+    stage('Build Docker Image') {
+      steps {
+        sh 'make build-image'
       }
     }
   }
