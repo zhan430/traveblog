@@ -1,5 +1,5 @@
 git:
-	cd /home/ubuntu/traveblog
+	#cd /home/ubuntu/traveblog
 	git pull
 
 build-image:
