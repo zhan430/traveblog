@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  def image
   stages {
     stage('Lint HTML') {
       steps {
@@ -9,7 +10,14 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         script {
-	    docker.build "zhan430/traveblog"
+	    image = docker.build("zhan430/traveblog:${env.BUILD_ID}")
+	}
+      }
+    }
+    stage('Upload Image') {
+      steps {
+        script {
+	    image.push("latest")
 	}
       }
     }
