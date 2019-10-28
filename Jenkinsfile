@@ -1,6 +1,9 @@
 pipeline {
   agent any
-  def image
+  environment {
+    credential = 'dockerhub'
+    image = ''
+  }
   stages {
     stage('Lint HTML') {
       steps {
@@ -10,7 +13,7 @@ pipeline {
     stage('Build Docker Image') {
       steps {
         script {
-	    image = docker.build("zhan430/traveblog:${env.BUILD_ID}")
+	    image = docker.build "zhan430/traveblog:${env.BUILD_ID}"
 	}
       }
     }
