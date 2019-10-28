@@ -2,5 +2,5 @@ git:
 	git pull
 
 build-image:
-	docker build --tag=traveblog .
+	sudo docker build --tag=traveblog .
 
