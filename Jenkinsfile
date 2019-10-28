@@ -3,9 +3,9 @@ pipeline {
   stages {
     stage('Build Docker Image') {
       steps {
-        sh "cd /home/ubuntu/traveblog"
-        sh "make git"
-        sh "make build-image"
+        sh '''cd /home/ubuntu/traveblog
+            make git
+            make build-image'''
       }
     }
   }
