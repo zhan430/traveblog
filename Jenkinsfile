@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Build Docker Image') {
       steps {
-        sh "echo $PWD"
+        sh "cd /home/ubuntu/traveblog"
+        sh "make pull"
         sh "make build-image"
       }
     }
