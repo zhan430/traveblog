@@ -5,6 +5,7 @@ pipeline {
       steps {
         sh '''cd /var/lib/jenkins/workspace/traveblog_master
             make git
+            ls -ltr
             make build-image'''
       }
     }
