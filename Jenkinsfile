@@ -5,6 +5,11 @@ pipeline {
     image = ''
   }
   stages {
+    stage('Cloning Git') {
+      steps {
+        git 'https://github.com/gustavoapolinario/microservices-node-example-todo-frontend.git'
+      }
+    }
     stage('Lint HTML') {
       steps {
         sh "tidy -q -e traveblog/*.html"
