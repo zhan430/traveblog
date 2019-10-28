@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('Build Docker Image') {
       steps {
-        sh '''cd /home/ubuntu/traveblog
-            make git
+        sh '''/var/lib/jenkins/workspace/traveblog_master
             make build-image'''
       }
     }
