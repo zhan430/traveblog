@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Build Docker Image') {
       steps {
-        sh "sudo docker build -t zhan430/traveblog:${env.BUILD_ID}"
+        sh "sudo docker build -t zhan430/traveblog:${env.BUILD_ID}" .
       }
     }
     stage('Upload Image') {
