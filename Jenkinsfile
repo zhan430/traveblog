@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Upload Image') {
       steps {
-        sh "sudo docker push zhan430/traveblog${env.BUILD_ID}"
+        sh "sudo docker push zhan430/traveblog"
       }
     }
   }
