@@ -9,7 +9,7 @@ pipeline {
       steps {
         script {
             docker.withRegistry( '', credential ) {
-              sh "sudo docker push zhan430/traveblog"
+              sh "sudo docker push zhan430/traveblog:47"
           }
         }
       }
