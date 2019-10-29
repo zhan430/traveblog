@@ -7,7 +7,11 @@ pipeline {
   stages {
     stage('Upload Image') {
       steps {
-        sh "sudo docker push zhan430/traveblog"
+        script {
+            docker.withRegistry( '', credential ) {
+              sh "sudo docker push zhan430/traveblog"
+          }
+        }
       }
     }
   }
