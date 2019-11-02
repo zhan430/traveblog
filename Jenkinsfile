@@ -24,7 +24,7 @@ pipeline {
       steps {
         withCredentials([usernamePassword(credentialsId: 'dockerhub', username: 'user', password: 'password')]) {
           sh """
-            sudo docker login -u user -p password
+            sudo docker login -u ${user} -p ${password}
             sudo docker push zhan430/traveblog:${env.BUILD_ID}
           """
         }
