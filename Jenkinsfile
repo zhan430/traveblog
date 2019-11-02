@@ -22,7 +22,10 @@ pipeline {
     }
     stage('Upload Image') {
       steps {
-        sh "sudo docker push zhan430/traveblog:${env.BUILD_ID}"
+        sh '''
+          sudo docker login -u zhan430 -p zxy01115102
+          sudo docker push zhan430/traveblog:${env.BUILD_ID}
+        '''
       }
     }
   }
