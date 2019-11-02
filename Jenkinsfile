@@ -5,13 +5,24 @@ pipeline {
     image = ''
   }
   stages {
+    stage('Cloning Git') {
+      steps {
+        git 'https://github.com/zhan430/traveblog.git'
+      }
+    }
+    stage('Lint HTML') {
+      steps {
+        sh "tidy -q -e traveblog/*.html"
+      }
+    }
+    stage('Build Docker Image') {
+      steps {
+        sh "sudo docker build -t zhan430/traveblog:${env.BUILD_ID} ."
+      }
+    }
     stage('Upload Image') {
       steps {
-        script {
-            docker.withRegistry( 'docker.io', mycredential ) {
-              sh "sudo docker push zhan430/traveblog:47"
-          }
-        }
+        sh "sudo docker push zhan430/traveblog:${env.BUILD_ID}"
       }
     }
   }
